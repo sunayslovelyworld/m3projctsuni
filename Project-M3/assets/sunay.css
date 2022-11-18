@@ -6,6 +6,12 @@ body{
     width: 100vw;
     height: 100vh;
 }
+
+/* img{
+    width: 100%;
+} */
+
+/* header part */
 header{
     width: 100%;
     background-color: #F5F5F6;
@@ -19,6 +25,7 @@ header{
 img{
     height: 30px;
     width: 30px;
+    margin-left: 150px;
 }
 
 ul{
@@ -79,16 +86,9 @@ main{
     height: 100%;
     margin: 0px auto;
 }
-
-
 h1{
     font-size: 50px;
 }
-
-.active{
-    background-color: #d12ab3;
-}
-
 #container{
     width: 100%;
     display: flex;
@@ -99,7 +99,6 @@ h1{
     flex-direction: column;
     width: fit-content;
 }
-
 /* Currency */
 #currency-column1, #currency-column2{
     display: flex;
@@ -113,16 +112,20 @@ h1{
 
 }
 
-.area1, .area2{
+.pink{
+    background-color: #d12ab3;
+}
+.block1, .block2{
     width: 300px;
     border: 1px solid lightgrey;
     border-radius: 5px;
     padding: 20px;
     margin-top: 30px;
 }
-.input1, .input2{
-    background-color: #fad5f3;
+
+#input-1, #input-2{
+    background-color: rgb(249, 218, 244) ;
     border: none;
     font-size: 30px;
-    width: 150px;
-} 
+    width: 250px;
+}
