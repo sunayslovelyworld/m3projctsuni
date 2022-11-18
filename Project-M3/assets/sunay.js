@@ -1,114 +1,192 @@
-// let body = document.body;
-// let currency1 = document.querySelector('.currency-row1');
-// let currency2 = document.querySelector('.currency-row2');
+// // let body = document.body;
+// // let currency1 = document.querySelector('.currency-row1');
+// // let currency2 = document.querySelector('.currency-row2');
 
 
-// // mouseover mouseout
-// currency1.addEventListener("mouseover", e=>{
-//     if(e.target.className==='currency1'){
-//         e.target.style.backgroundColor="#833AE0"
-//         e.target.style.borderColor="833AE0"
-//     }
-// })
-// currency1.addEventListener("mouseout", e=>{
-//     if(e.target.className==='currency1'){
-//         e.target.style.backgroundColor="white"
-//         e.target.style.borderColor="lightgrey"
-//     }
-// })
-// currency2.addEventListener("mouseover", e=>{
-//     if(e.target.className==='currency2'){
-//         e.target.style.backgroundColor="#833AE0"
-//         e.target.style.borderColor="833AE0"
-//     }
-// })
-// currency2.addEventListener("mouseout", e=>{
-//     if(e.target.className==='currency2'){
-//         e.target.style.backgroundColor="white"
-//         e.target.style.borderColor="lightgrey"
-//     }
-// })
+// // // mouseover mouseout
+// // currency1.addEventListener("mouseover", e=>{
+// //     if(e.target.className==='currency1'){
+// //         e.target.style.backgroundColor="#833AE0"
+// //         e.target.style.borderColor="833AE0"
+// //     }
+// // })
+// // currency1.addEventListener("mouseout", e=>{
+// //     if(e.target.className==='currency1'){
+// //         e.target.style.backgroundColor="white"
+// //         e.target.style.borderColor="lightgrey"
+// //     }
+// // })
+// // currency2.addEventListener("mouseover", e=>{
+// //     if(e.target.className==='currency2'){
+// //         e.target.style.backgroundColor="#833AE0"
+// //         e.target.style.borderColor="833AE0"
+// //     }
+// // })
+// // currency2.addEventListener("mouseout", e=>{
+// //     if(e.target.className==='currency2'){
+// //         e.target.style.backgroundColor="white"
+// //         e.target.style.borderColor="lightgrey"
+// //     }
+// // })
+
+// //Default values
+// let money1='RUB'
+// let money2='USD'
 
 
-// let body = document.body;
-// let currencyRow1 = document.querySelector('#currency-row1');
-// let currencyRow2 = document.querySelector('#currency-row2');
-// let p1= document.querySelector('.area1>p');
-// let p2= document.querySelector('.area2>p');
-// let input1 = document.querySelector('#input1')
-// let input2 = document.querySelector('#input2')
+// //currencyColumn1 onclick
 
-// Violet color function
+// let input1= document.querySelector('#input-1');
+// //input1= input1.replace(/,/g, '.')
+// let input2= document.querySelector('#input-2');
+// //input2= input1.replace(/,/g, '.')
+// let p1= document.querySelector('#p-1');
+// let p2= document.querySelector('#p-2');
 
-// White color function
+// let currencyColumn1 = document.querySelector('#currency-column1');
 
+// let childrenOfArray1 = [...currencyColumn1.children]
+// console.log(currencyColumn1.children)
+// currencyColumn1.addEventListener("click", e=>{
 
-
-// let state1= 'RUB';
-// let state2= 'USD';
-// // If clicked state
-// currencyRow1.addEventListener("click", e=>{
-//     if(e.target.className==='currency1' || e.target.className==='currency2'){
-//         e.target.style.backgroundColor="#833AE0";
-//         e.target.style.borderColor="#833AE0";
-//         e.target.style.color="white";
-
-//         fetch(`https://api.exchangerate.host/latest?base=${e.target.innerText}&symbols=${state2}`)
-//         .then(r=>r.json())
-//         .then(data=>{
-//             state1=e.target.innerText;
-//             p1.innerText=`1 ${state1} = ${(+Object.values(data.rates)).toFixed(3)} ${state2}`;
-//             p2.innerText=`1 ${state2} = ${(1/Object.values(data.rates)).toFixed(3)} ${state1}`;
-
-//             console.log(input1.value.match('/\d/'))
-
-//             if(input2.value==='' || typeof input2.value==='string'){
-//                 input2.value=(input1.value*Object.values(data.rates)).toFixed(3);
-//             }
-//             else if(input1.value===''){
-//                 input1.value=(input2.value/Object.values(data.rates)).toFixed(3);
-//             }
-//         })
-//     }
-// })
-
-
-
-
-
-
-
-let currencyColumn1 = document.querySelector('#currency-column1');
-console.log(currencyColumn1.children)
-
-let childrenOfArray1 = [...currencyColumn1.children]
-console.log(childrenOfArray1)
-
-currencyColumn1.addEventListener("click", e=>{
-    childrenOfArray1.forEach(item=>{
-        if(item.classList.contains('active')){
-            item.classList.remove('active')
-        }
-    })
-    e.target.classList.add("active")
-})
-
-
-// let currencyColumn2 = document.querySelector('currency-column2');
-// console.log(currency-column2.children)
-
-// let childrenOfArray2 = [...currencyColumn2.children]
-// console.log(childrenOfArray2)
-
-// currencyColumn2.addEventListener("click", e=>{
-//     childrenOfArray2.forEach(item=>{
+//     childrenOfArray1.forEach(item => {
 //         if(item.classList.contains('active')){
 //             item.classList.remove('active')
 //         }
-//     })
-//     e.target.classList.add('active')
+//      })
+
+//       e.target.classList.add("active");
+//       money1=e.target.innerText
+     
+
+//       fetch(`https://api.exchangerate.host/latest?base=${money1}&symbols=${money2}`)
+//       .then(response=>response.json())
+//       .then(data=>{
+    
+    
+//         p1.innerText=`1 ${money1} =${(+Object.values(data.rates))} ${money2}`
+//         p2.innerText=`1 ${money2} =${(1/Object.values(data.rates))} ${money1}`
+
+//        // input1.value=input1.value.replace(/,/g, '. ')
+//        // input2.value=input2.value.replace(/,/g, '. ')
+
+//         if(typeof input2.value==='string'){
+//             input2.value=(input1.value*Object.values(data.rates));
+//         }
+//         else if(typeof input1.value==='string'){
+//             input1.value=(input2.value/Object.values(data.rates));
+//         }
+
+//       }
+//         )
 // })
 
 
 
+// //currencyColumn2 onclick
 
+// let currencyColumn2 = document.querySelector('#currency-column2');
+
+// let childrenOfArray2 = [...currencyColumn2.children]
+
+// currencyColumn2.addEventListener("click", e=>{
+
+//     childrenOfArray2.forEach(item => {
+//         if(item.classList.contains('active')){
+//             item.classList.remove('active')
+//         }
+//      })
+
+//       e.target.classList.add("active")
+//       money2=e.target.innerText
+     
+
+//       fetch(`https://api.exchangerate.host/latest?base=${money1}&symbols=${money2}`)
+//       .then(response=>response.json())
+//       .then(data=>{
+    
+    
+//         p1.innerText=`1 ${money1} =${(+Object.values(data.rates))} ${money2}`
+//         p2.innerText=`1 ${money2} =${(1/Object.values(data.rates))} ${money1}`
+        
+
+//        // input1.value=input1.value.replace(/,/g, '. ')
+//         //input2.value=input2.value.replace(/,/g, '. ')
+
+
+//         if(typeof input2.value==='string'){
+//             input2.value=(input1.value*Object.values(data.rates));
+//         }
+//         else if(typeof input1.value==='string'){
+//             input1.value=(input2.value/Object.values(data.rates));
+//         }
+
+//       }
+//      )
+// })
+
+let button = document.querySelectorAll('.first-container');
+let secondButton = document.querySelectorAll('.second-container');
+let p = document.querySelector('.in p');
+let p2 = document.querySelector('.out p');
+let x = "1 RUB",y = "1 RUB",any;
+p.innerHTML = x+" = "+y;
+let base='RUB',symbols='RUB';
+
+let input = document.querySelector('.in input')
+let output = document.querySelector('.out input')
+
+button.forEach((item)=>{
+    item.addEventListener('click',(e)=>{
+        x = "1 "+ e.target.innerText;
+        base = e.target.innerText;
+        myFunction();
+        console.log(base,symbols);
+        if(e.target){
+            e.target.class = 'active';
+            let notButton = document.querySelectorAll('.first-container button:not(button.active)');
+            notButton.forEach((element)=>{
+                element.style.background = 'white';
+                element.style.color = '#E5E5E5';
+            })
+            e.target.style.background = '#ea7fc1';
+            e.target.style.color = 'white';
+        }
+    })
+})
+
+secondButton.forEach((element)=>{
+    element.addEventListener('click',(a)=>{
+        symbols = a.target.innerText;
+        myFunction();
+        if(a.target){
+            a.target.class = 'active';
+            let notButton = document.querySelectorAll('.second-container button:not(button.active)');
+            notButton.forEach((element)=>{
+                element.style.background = 'white';
+                element.style.color = '#E5E5E5';
+            })
+            a.target.style.background = '#ea7fc1';
+            a.target.style.color = 'white';
+        }
+    })
+})
+
+async function myFunction(){
+    let q = await fetch(`https://api.exchangerate.host/latest?base=${base}&symbols=${symbols}`)
+    let d = await q.json();
+    any = d.rates[symbols];
+    console.log(any)
+    input.oninput = function(){
+        output.value = any * input.value;
+    }
+    output.oninput = function(){
+        input.value = 1/any * output.value;
+    }
+    output.value = any * input.value;
+    y = any + " " + symbols;
+    p.innerHTML = x+" = "+y;
+    p2.innerHTML = "1 "+ symbols +" = "+1/any + " " + base;
+}  
+
+myFunction();

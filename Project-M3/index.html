@@ -9,25 +9,34 @@
     <script src="./assets/sunay.js"></script>
 </head>
 <body>
-    <!-- <head>
+
+
+    <!-- <img src="./assets/img/header.png"> -->
+    
+    <header>
         <div>
-            <img src="./assets/img/bank.png">
-            <p>БАНК</p>
-            <p>БИЗНЕС</p>
-            <p>ИНВЕСТИЦИИ</p>
-            <p>СТРАХОВАНИЕ</p>
-            <p>МОБАЙЛ</p>
-            <p>ПУТЕШЕСТВИЯ</p>
-            <p>РАЗВЛЕЧЕНИЯ</p>
-            <button>ВОЙТИ</button>
+            <img src="./assets/img/algoritmika_logo.png" alt="logo">
         </div>
-    </head> -->
-    <img src="./assets/img/header.png">
+        <div>
+            <ul>
+                <li class="underline">BANK</li>
+                <li class="underline">BUSINESS</li>
+                <li class="underline">INVESTMENTS</li>
+                <li class="underline">INSURANCE</li>
+                <li class="underline">MOBILE</li>
+                <li class="underline">JOURNEYS</li>
+                <li class="underline">ENTERTAINMENT</li>
+            </ul>
+        </div>
+        <div>
+            <button>ENTER</button>
+        </div>
+    </header>
     <main>
-        <h1>Currency converter online</h1>
+        <h1>Pink Currency Converter</h1>
         <div id="container">
-            <div ids="first-container">
-                <p>I have </p>
+            <div id="first-container">
+                <p>I have...</p>
                 <div id="currency-column1">
                     <div class="currency1 active">RUB</div>
                     <div class="currency1">USD</div>
@@ -36,13 +45,13 @@
                 </div>
                 
                 <div class="area1">
-                    <input class="input1" type="text">
-                    <p>1 RUB = 0.0135 USD</p>
+                    <input id="input-1" type="text">
+                    <p id="p-1">1 RUB = 0.0135 USD</p>
                 </div>
             </div>
         
             <div id="second-container">
-                <p>I want to buy</p>
+                <p>I want to purchase...</p>
                 <div id="currency-column2">
                     <div class="currency2">RUB</div>
                     <div class="currency2 active">USD</div>
@@ -51,8 +60,8 @@
                 </div>
 
                 <div class="area2">
-                    <input class="input2" type="text">
-                    <p>1 USD = 73.8896 RUB</p>
+                    <input id="input-2" type="text">
+                    <p id="p-2">1 USD = 73.8896 RUB</p>
                 </div>
             </div>
             
